@@ -142,13 +142,38 @@
             margin-bottom: 4px;
         }
 
-        /* ===== ВИДЖЕТ — МИНИМАЛЬНЫЕ ПРАВКИ ===== */
+        /* ===== ВИДЖЕТ — ЦЕНТРИРОВАН ===== */
         .widget-wrapper {
             background: #ffffff !important;
             border-radius: 16px !important;
             padding: 16px !important;
             border: 4px solid #f0b90b !important;
             width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        /* САМ ВИДЖЕТ Digiseller — ПО ЦЕНТРУ */
+        .digiseller-buy-standalone {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            float: none !important;
+            clear: both !important;
+            text-align: center !important;
+        }
+
+        /* ВСЁ ВНУТРИ ВИДЖЕТА — ПО ЦЕНТРУ */
+        .digiseller-buy-standalone * {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            text-align: center !important;
         }
 
         /* Шрифт как в оригинале Digiseller */
@@ -171,10 +196,13 @@
             color: #0b0e14 !important;
             background: #ffffff !important;
             outline: none !important;
-            margin: 2px 0 !important;
+            margin: 2px auto !important;
             width: 100% !important;
+            max-width: 280px !important;
             box-sizing: border-box !important;
             height: auto !important;
+            display: block !important;
+            text-align: left !important;
         }
 
         .widget-wrapper input:focus {
@@ -196,8 +224,11 @@
             cursor: pointer !important;
             transition: 0.2s !important;
             width: 100% !important;
-            margin-top: 6px !important;
+            max-width: 280px !important;
+            margin: 6px auto !important;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            display: block !important;
+            text-align: center !important;
         }
 
         .widget-wrapper .btn:hover,
@@ -206,7 +237,7 @@
             background: #e0a80a !important;
         }
 
-        /* Текст внутри виджета — компактно */
+        /* Текст внутри виджета */
         .widget-wrapper label,
         .widget-wrapper span,
         .widget-wrapper .label,
@@ -215,11 +246,13 @@
             color: #0b0e14 !important;
             font-size: 13px !important;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-            margin: 2px 0 !important;
+            margin: 2px auto !important;
             line-height: 1.4 !important;
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
         }
 
-        /* Заголовки внутри виджета */
         .widget-wrapper strong,
         .widget-wrapper b {
             color: #0b0e14 !important;
@@ -258,6 +291,12 @@
             .widget-wrapper input[type="number"] {
                 padding: 5px 8px !important;
                 font-size: 13px !important;
+                max-width: 100% !important;
+            }
+            .widget-wrapper .btn,
+            .widget-wrapper button,
+            .widget-wrapper input[type="submit"] {
+                max-width: 100% !important;
             }
         }
     </style>
