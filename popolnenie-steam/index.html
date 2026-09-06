@@ -142,8 +142,10 @@
             margin-bottom: 4px;
         }
 
+        /* ВИДЖЕТ — ЦЕНТРИРОВАН */
         .digiseller-buy-standalone {
             width: 100% !important;
+            max-width: 100% !important;
             background: linear-gradient(135deg, #f0b90b, #e0a80a) !important;
             color: #0b0e14 !important;
             font-weight: 700 !important;
@@ -154,15 +156,25 @@
             cursor: pointer !important;
             font-family: 'Inter', Arial, sans-serif !important;
             transition: 0.2s !important;
-            display: block !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             text-align: center !important;
             box-shadow: 0 4px 20px rgba(240, 185, 11, 0.25) !important;
+            margin: 0 auto !important;
         }
 
         .digiseller-buy-standalone:hover {
             transform: scale(1.02) !important;
             background: linear-gradient(135deg, #f5c42a, #e8b20e) !important;
             box-shadow: 0 6px 30px rgba(240, 185, 11, 0.4) !important;
+        }
+
+        /* Центрируем контейнер виджета */
+        .widget-center {
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
 
         .footer {
@@ -203,7 +215,7 @@
         <div class="product-header">
             <div class="big-icon">💳</div>
             <div class="title-group">
-                <h1>🚀АВТОМАТИЧЕСКОЕ ПОПОЛНЕНИЕ БАЛАНСА STEAM 🚀RUB UAH KZT</h1>
+                <h1>🚀 Автоматическое пополнение баланса Steam</h1>
                 <div class="price-big">
                     21.60 ₽ <small>≈ 20 STEAM RUB</small>
                 </div>
@@ -232,6 +244,7 @@
                 </ul>
             </div>
 
+            <!-- Виджет Digiseller — ЦЕНТРИРОВАН -->
             <script>
                 !function(e) {
                     var l = function(l) {
@@ -256,20 +269,23 @@
                 }(document);
             </script>
 
-            <div style="display: block; width: 100%;" class="digiseller-buy-standalone"
-                 data-id="3300218"
-                 data-ai="1379890"
-                 data-img="1"
-                 data-img-size="180"
-                 data-name="1"
-                 data-price="1"
-                 data-no-price="0">
+            <!-- ОБЁРТКА ДЛЯ ЦЕНТРИРОВАНИЯ -->
+            <div class="widget-center">
+                <div style="display: block; width: 100%;" class="digiseller-buy-standalone"
+                     data-id="3300218"
+                     data-ai="1379890"
+                     data-img="1"
+                     data-img-size="180"
+                     data-name="1"
+                     data-price="1"
+                     data-no-price="0">
+                </div>
             </div>
 
         </div>
 
         <div class="footer">
-            © 2026 TechHub ·
+            © 2026 TechHub
         </div>
 
     </div>
