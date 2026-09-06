@@ -142,47 +142,61 @@
             margin-bottom: 4px;
         }
 
-        /* ===== ЖЁСТКОЕ ЦЕНТРИРОВАНИЕ ВИДЖЕТА ===== */
+        /* ===== ВИДЖЕТ — БЕЛАЯ ПЛАШКА С ТОЛСТОЙ ЖЁЛТОЙ ОБВОДКОЙ ===== */
         .widget-wrapper {
+            background: #ffffff !important;
+            border-radius: 16px !important;
+            padding: 16px !important;
+            border: 4px solid #f0b90b !important;
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
             width: 100% !important;
         }
 
+        /* Убираем фон у всех внутренних элементов Digiseller */
+        .widget-wrapper * {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+        }
+
+        /* КНОПКА — БЕЛАЯ, без всплытия */
         .digiseller-buy-standalone {
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             width: 100% !important;
             max-width: 100% !important;
-            background: linear-gradient(135deg, #f0b90b, #e0a80a) !important;
+            background: #ffffff !important;
             color: #0b0e14 !important;
             font-weight: 700 !important;
             font-size: 18px !important;
-            padding: 15px 0 !important;
+            padding: 14px 0 !important;
             border-radius: 60px !important;
-            border: none !important;
+            border: 1px solid #e0e0e0 !important;
             cursor: pointer !important;
             font-family: 'Inter', Arial, sans-serif !important;
-            transition: 0.2s !important;
+            transition: none !important;
             text-align: center !important;
-            box-shadow: 0 4px 20px rgba(240, 185, 11, 0.25) !important;
             margin: 0 auto !important;
             float: none !important;
             clear: both !important;
         }
 
         .digiseller-buy-standalone:hover {
-            transform: scale(1.02) !important;
-            background: linear-gradient(135deg, #f5c42a, #e8b20e) !important;
-            box-shadow: 0 6px 30px rgba(240, 185, 11, 0.4) !important;
+            background: #f5f5f5 !important;
+            border-color: #ccc !important;
+            transform: none !important;
         }
 
-        /* Принудительно выравниваем всё внутри виджета */
         .digiseller-buy-standalone * {
             text-align: center !important;
             margin: 0 auto !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            color: #0b0e14 !important;
         }
 
         .footer {
@@ -208,6 +222,9 @@
             }
             .product-header .title-group .price-big {
                 font-size: 22px;
+            }
+            .widget-wrapper {
+                padding: 12px !important;
             }
         }
     </style>
@@ -252,7 +269,7 @@
                 </ul>
             </div>
 
-            <!-- Виджет Digiseller с обёрткой -->
+            <!-- ВИДЖЕТ — БЕЛАЯ ПЛАШКА С ТОЛСТОЙ ЖЁЛТОЙ ОБВОДКОЙ -->
             <script>
                 !function(e) {
                     var l = function(l) {
