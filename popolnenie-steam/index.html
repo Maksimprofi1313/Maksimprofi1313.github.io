@@ -142,8 +142,18 @@
             margin-bottom: 4px;
         }
 
-        /* ВИДЖЕТ — ЦЕНТРИРОВАН */
+        /* ===== ЖЁСТКОЕ ЦЕНТРИРОВАНИЕ ВИДЖЕТА ===== */
+        .widget-wrapper {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+
         .digiseller-buy-standalone {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             width: 100% !important;
             max-width: 100% !important;
             background: linear-gradient(135deg, #f0b90b, #e0a80a) !important;
@@ -156,12 +166,11 @@
             cursor: pointer !important;
             font-family: 'Inter', Arial, sans-serif !important;
             transition: 0.2s !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
             text-align: center !important;
             box-shadow: 0 4px 20px rgba(240, 185, 11, 0.25) !important;
             margin: 0 auto !important;
+            float: none !important;
+            clear: both !important;
         }
 
         .digiseller-buy-standalone:hover {
@@ -170,11 +179,10 @@
             box-shadow: 0 6px 30px rgba(240, 185, 11, 0.4) !important;
         }
 
-        /* Центрируем контейнер виджета */
-        .widget-center {
-            display: flex;
-            justify-content: center;
-            width: 100%;
+        /* Принудительно выравниваем всё внутри виджета */
+        .digiseller-buy-standalone * {
+            text-align: center !important;
+            margin: 0 auto !important;
         }
 
         .footer {
@@ -244,7 +252,7 @@
                 </ul>
             </div>
 
-            <!-- Виджет Digiseller — ЦЕНТРИРОВАН -->
+            <!-- Виджет Digiseller с обёрткой -->
             <script>
                 !function(e) {
                     var l = function(l) {
@@ -269,9 +277,8 @@
                 }(document);
             </script>
 
-            <!-- ОБЁРТКА ДЛЯ ЦЕНТРИРОВАНИЯ -->
-            <div class="widget-center">
-                <div style="display: block; width: 100%;" class="digiseller-buy-standalone"
+            <div class="widget-wrapper">
+                <div class="digiseller-buy-standalone"
                      data-id="3300218"
                      data-ai="1379890"
                      data-img="1"
