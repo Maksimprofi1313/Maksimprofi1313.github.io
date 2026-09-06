@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechHub — Пополнение Steam</title>
+    <title>TechHub — Товары</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
     <style>
         * {
@@ -17,15 +17,13 @@
             background: #0b0e14;
             color: #e8edf5;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
         }
 
         .container {
-            max-width: 520px;
+            max-width: 600px;
             width: 100%;
+            margin: 0 auto;
             background: #141a24;
             border-radius: 32px;
             padding: 32px 24px;
@@ -35,7 +33,7 @@
 
         .header {
             text-align: center;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .header .icon {
@@ -59,139 +57,80 @@
 
         .product-card {
             background: #1e2735;
-            border-radius: 20px;
-            padding: 24px 20px;
+            border-radius: 16px;
+            padding: 16px;
             border: 1px solid #2e3a4e;
-            margin-bottom: 16px;
-        }
-
-        .product-card .badge {
-            background: #f0b90b;
-            color: #0b0e14;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 14px;
-            border-radius: 30px;
-            display: inline-block;
-            letter-spacing: 0.5px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 16px;
             margin-bottom: 12px;
         }
 
-        .product-card .top-row {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 10px;
+        .product-card:hover {
+            border-color: #f0b90b;
+            transform: translateX(4px);
+            box-shadow: 0 4px 20px rgba(240, 185, 11, 0.1);
         }
 
-        .product-card .top-row .emoji {
-            font-size: 36px;
+        .product-card .image {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
             background: #2a3344;
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 32px;
             flex-shrink: 0;
         }
 
-        .product-card .top-row .title-group h2 {
-            font-size: 18px;
+        .product-card .info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .product-card .info .name {
+            font-size: 14px;
             font-weight: 600;
             color: #e8edf5;
+            line-height: 1.3;
         }
 
-        .product-card .top-row .title-group .price {
-            font-size: 22px;
+        .product-card .info .price {
+            font-size: 18px;
             font-weight: 700;
             color: #f5d34b;
+            margin-top: 2px;
         }
 
-        .product-card .top-row .title-group .price span {
-            font-size: 13px;
+        .product-card .info .price small {
+            font-size: 12px;
             font-weight: 400;
             color: #8896ab;
         }
 
-        .product-card .sales {
-            font-size: 13px;
-            color: #6a7a92;
-            margin-bottom: 10px;
-        }
-
-        .product-card .sales strong {
-            color: #e8edf5;
-        }
-
-        .product-card .desc {
-            font-size: 13px;
-            color: #b0c0d4;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .product-card .desc details {
-            margin-top: 6px;
-        }
-
-        .product-card .desc summary {
-            color: #6a8bb0;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 13px;
-        }
-
-        .product-card .desc details p {
-            margin-top: 8px;
-            padding: 10px 14px;
-            background: #141a24;
-            border-radius: 10px;
+        .product-card .info .sales {
             font-size: 12px;
-            color: #8896ab;
-            line-height: 1.7;
+            color: #6a7a92;
         }
 
-        .product-card .desc details p strong {
+        .product-card .info .sales strong {
             color: #e8edf5;
         }
 
-        .product-card .desc details p .warn {
-            color: #f0b90b;
-        }
-
-        /* Виджет Digiseller — в точности как ты скинул */
-        .digiseller-buy-standalone {
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            width: 100% !important;
-            background: linear-gradient(135deg, #f0b90b, #e0a80a) !important;
-            color: #0b0e14 !important;
-            font-weight: 700 !important;
-            font-size: 18px !important;
-            padding: 15px 0 !important;
-            border-radius: 60px !important;
-            border: none !important;
-            cursor: pointer !important;
-            font-family: 'Inter', Arial, sans-serif !important;
-            transition: 0.2s !important;
-            box-shadow: none !important;
-            text-align: center !important;
-        }
-
-        .digiseller-buy-standalone:hover {
-            transform: scale(1.02) !important;
-            background: linear-gradient(135deg, #f5c42a, #e8b20e) !important;
-        }
-
-        .digiseller-buy-standalone * {
-            color: #0b0e14 !important;
+        .product-card .arrow {
+            color: #4a5a72;
+            font-size: 18px;
+            flex-shrink: 0;
         }
 
         .footer {
             text-align: center;
-            margin-top: 18px;
+            margin-top: 24px;
             font-size: 12px;
             color: #4a5a72;
             border-top: 1px solid #1e2735;
@@ -202,16 +141,16 @@
             .container {
                 padding: 20px 16px;
             }
-            .product-card .top-row .emoji {
-                width: 44px;
-                height: 44px;
-                font-size: 28px;
+            .product-card .image {
+                width: 52px;
+                height: 52px;
+                font-size: 26px;
             }
-            .product-card .top-row .title-group h2 {
+            .product-card .info .name {
+                font-size: 13px;
+            }
+            .product-card .info .price {
                 font-size: 16px;
-            }
-            .product-card .top-row .title-group .price {
-                font-size: 18px;
             }
         }
     </style>
@@ -221,85 +160,24 @@
     <div class="container">
 
         <div class="header">
-            <div class="icon">🎮</div>
+            <div class="icon">🛒</div>
             <h1>TechHub</h1>
-            <p>Пополнение Steam за 1 минуту</p>
+            <p>Все товары Killer1801</p>
         </div>
 
-        <div class="product-card">
-            <div class="badge">⚡ ТОП</div>
-
-            <div class="top-row">
-                <div class="emoji">💳</div>
-                <div class="title-group">
-                    <h2>Автопополнение баланса Steam</h2>
-                    <div class="price">
-                        21.60 ₽ <span>≈ 20 STEAM RUB</span>
-                    </div>
-                </div>
+        <!-- ТОВАР 1 — ссылка на папку -->
+        <a href="popolnenie-steam/" class="product-card">
+            <div class="image">💳</div>
+            <div class="info">
+                <div class="name">🚀АВТОМАТИЧЕСКОЕ ПОПОЛНЕНИЕ БАЛАНСА STEAM 🚀RUB UAH KZT</div>
+                <div class="price">21.60 ₽ <small>≈ 20 STEAM RUB</small></div>
+                <div class="sales">⭐ Продано: <strong>1 334 598+</strong></div>
             </div>
-
-            <div class="sales">
-                ⭐ Продано: <strong>1 334 596+</strong> товаров
-            </div>
-
-            <div class="desc">
-                <p>Пополняем: 🇷🇺 Россия, 🇰🇿 Казахстан, 🇺🇦 Украина, 🇰🇬 Кыргызстан, 🇺🇿 Узбекистан и другие страны СНГ.</p>
-
-                <details>
-                    <summary>📖 Подробнее об условиях</summary>
-                    <p>
-                        <strong>⚠️ Важно:</strong><br />
-                        • Рекомендуемый суточный лимит — <strong>31 000 ₽</strong>.<br />
-                        • Крупные суммы дробите по <strong>12 000</strong> за платеж.<br />
-                        • Для новых аккаунтов покупайте <strong>минимальную сумму</strong>.<br />
-                        • <span class="warn">Не пополняем:</span> Китай, Европу, США, Бразилию.<br />
-                        • Пополняем Крым, ЛНР, ДНР — перед оплатой <strong>закройте Steam</strong> и включите авиарежим на телефоне.<br />
-                        • При ошибке возврат — <strong>-15%</strong> от суммы.<br />
-                        • Логин указан неверно — <strong>возврат не делаем</strong>.
-                    </p>
-                </details>
-            </div>
-        </div>
-
-        <!-- ТВОЙ ВИДЖЕТ Digiseller (без изменений) -->
-        <script>
-            !function(e) {
-                var l = function(l) {
-                    return e.cookie.match(new RegExp("(?:^|; )digiseller-" + l + "=([^;]*)"));
-                };
-                var i = l("lang");
-                var s = l("cart_uid");
-                var t = i ? "&lang=" + i[1] : "";
-                var d = s ? "&cart_uid=" + s[1] : "";
-                var r = e.getElementsByTagName("head")[0] || e.documentElement;
-                var n = e.createElement("link");
-                var a = e.createElement("script");
-                n.type = "text/css";
-                n.rel = "stylesheet";
-                n.id = "digiseller-css";
-                n.href = "//shop.digiseller.com/xml/store2_css.asp?seller_id=1379890";
-                a.async = !0;
-                a.id = "digiseller-js";
-                a.src = "//digiseller.com/store2/digiseller-api.js.asp?seller_id=1379890" + t + d;
-                if (!e.getElementById(n.id) && r.appendChild(n));
-                if (!e.getElementById(a.id) && r.appendChild(a));
-            }(document);
-        </script>
-
-        <!-- ТВОЙ ВИДЖЕТ (data-img="1" — показывает картинку) -->
-        <div style="display: block; width: 100%; text-align: center;" class="digiseller-buy-standalone"
-             data-id="3300218"
-             data-ai="1379890"
-             data-img="1"
-             data-img-size="180"
-             data-name="1"
-             data-price="1"
-             data-no-price="0">
-        </div>
+            <div class="arrow">›</div>
+        </a>
 
         <div class="footer">
-            © 2026 TechHub · Сделано с ❤️
+            © 2026 TechHub · Все товары Killer1801
         </div>
 
     </div>
