@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>techhub</title>
+    <title>techhub - Пополнение Steam</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,22 +20,48 @@
         }
         .product {
             background: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
         }
         .product:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        a {
+        .product a {
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
         }
-        a:hover {
+        .product a:hover {
             text-decoration: underline;
+        }
+        .product .price {
+            color: #27ae60;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product .sales {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .btn {
+            display: inline-block;
+            background: #27ae60;
+            color: white !important;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            margin-top: 10px;
+            text-decoration: none !important;
+        }
+        .btn:hover {
+            background: #219653;
+            text-decoration: none !important;
         }
         .footer {
             margin-top: 30px;
@@ -43,25 +69,62 @@
             color: #7f8c8d;
             font-size: 14px;
         }
-        .coming-soon {
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 18px;
-            padding: 20px;
-            background: #e8f4f8;
-            border-radius: 8px;
-            margin: 20px 0;
+        .digiseller-buy-standalone {
+            margin: 10px auto;
         }
     </style>
 </head>
 <body>
     <h1>🛒 Добро пожаловать на techhub!</h1>
-    <p>Здесь вы найдете лучшие цифровые товары. Переходите по ссылкам и получайте скидки!</p>
+    <p>Пополнение баланса Steam с автоматической доставкой. Моментально, дешево, надежно!</p>
     
-    <h2>📦 Популярные товары</h2>
-    
-    <div class="coming-soon">
-        🔜 Скоро здесь появятся товары с моими партнерскими ссылками!
+    <div class="product">
+        <a href="https://plati.market/itm/3300218?ai=1379890" target="_blank">
+            🎮 Автоматическое пополнение баланса STEAM
+        </a>
+        <div class="price">от 0.25 USD</div>
+        <div class="sales">⭐ Продано: 1 334 592+ товаров</div>
+        <p>Мгновенное пополнение баланса Steam. Поддерживаются RUB, UAH, KZT.</p>
+        <a href="https://plati.market/itm/3300218?ai=1379890" target="_blank" class="btn">
+            🚀 Купить сейчас
+        </a>
+    </div>
+
+    <!-- Виджет Digiseller (кнопка покупки прямо на сайте) -->
+    <script>
+        !function(e) {
+            var l = function(l) {
+                return e.cookie.match(new RegExp("(?:^|; )digiseller-" + l + "=([^;]*)"));
+            };
+            var i = l("lang");
+            var s = l("cart_uid");
+            var t = i ? "&lang=" + i[1] : "";
+            var d = s ? "&cart_uid=" + s[1] : "";
+            var r = e.getElementsByTagName("head")[0] || e.documentElement;
+            var n = e.createElement("link");
+            var a = e.createElement("script");
+            n.type = "text/css";
+            n.rel = "stylesheet";
+            n.id = "digiseller-css";
+            n.href = "//shop.digiseller.com/xml/store2_css.asp?seller_id=1379890";
+            a.async = !0;
+            a.id = "digiseller-js";
+            a.src = "//digiseller.com/store2/digiseller-api.js.asp?seller_id=1379890" + t + d;
+            if (!e.getElementById(n.id) && r.appendChild(n));
+            if (!e.getElementById(a.id) && r.appendChild(a));
+        }(document);
+    </script>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <div style="display: inline-block;" class="digiseller-buy-standalone" 
+             data-id="3300218" 
+             data-ai="1379890" 
+             data-img="1" 
+             data-img-size="180" 
+             data-name="1" 
+             data-price="1" 
+             data-no-price="0">
+        </div>
     </div>
 
     <div class="footer">
