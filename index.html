@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechHub — Товары</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
         * {
             margin: 0;
@@ -37,8 +38,23 @@
             margin-bottom: 28px;
         }
 
-        .header .icon {
-            font-size: 40px;
+        /* ЛОГОТИП СВЕРХУ ПО ЦЕНТРУ */
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .logo img {
+            max-width: 180px;
+            height: auto;
+            border-radius: 16px;
+            filter: drop-shadow(0 8px 30px rgba(240, 185, 11, 0.15));
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
         }
 
         .header h1 {
@@ -148,6 +164,9 @@
             .container {
                 padding: 20px 16px;
             }
+            .logo img {
+                max-width: 140px;
+            }
             .product-icon {
                 width: 46px;
                 height: 46px;
@@ -167,7 +186,10 @@
     <div class="container">
 
         <div class="header">
-            <div class="icon">🛒</div>
+            <!-- ЛОГОТИП -->
+            <div class="logo">
+                <img src="/лого сайта1.png" alt="TechHub Logo" />
+            </div>
             <h1>TechHub</h1>
             <p>Пополнение Steam за 1 минуту и не только!</p>
         </div>
